@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-labelledby="title desc">
+  <title id="title">College affordability flow</title>
+  <desc id="desc">Sticker price minus grants and aid leads to net price, which shapes college decisions.</desc>
+
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#101828" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 8 5 L 0 10 z" fill="#556070"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="300" rx="12" fill="#f4f7fb"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="460" y="50" fill="#101828" font-size="22" font-weight="800" text-anchor="middle">College Affordability Flow</text>
+    <text x="460" y="72" fill="#556070" font-size="13" font-weight="600" text-anchor="middle">Sticker price − aid = the real cost behind the decision</text>
+
+    <g filter="url(#softShadow)">
+      <rect x="58" y="104" width="160" height="118" rx="18" fill="#101828"/>
+      <text x="138" y="150" fill="#ffffff" font-size="18" font-weight="800" text-anchor="middle">Sticker Price</text>
+      <text x="138" y="184" fill="#ffca3a" font-size="30" font-weight="900" text-anchor="middle">$</text>
+    </g>
+
+    <line x1="238" y1="163" x2="262" y2="163" stroke="#556070" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+    <g filter="url(#softShadow)">
+      <rect x="278" y="104" width="160" height="118" rx="18" fill="#2f80ed"/>
+      <text x="358" y="150" fill="#ffffff" font-size="18" font-weight="800" text-anchor="middle">Grants + Aid</text>
+      <text x="358" y="184" fill="#ffffff" font-size="30" font-weight="900" text-anchor="middle">−</text>
+    </g>
+
+    <line x1="458" y1="163" x2="482" y2="163" stroke="#556070" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+    <g filter="url(#softShadow)">
+      <rect x="498" y="104" width="160" height="118" rx="18" fill="#2ec4b6"/>
+      <text x="578" y="150" fill="#101828" font-size="18" font-weight="800" text-anchor="middle">Net Price</text>
+      <text x="578" y="184" fill="#101828" font-size="26" font-weight="900" text-anchor="middle">Plan</text>
+    </g>
+
+    <line x1="678" y1="163" x2="702" y2="163" stroke="#556070" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+    <g filter="url(#softShadow)">
+      <rect x="718" y="104" width="160" height="118" rx="18" fill="#fff8ec" stroke="#d8e1ee" stroke-width="2"/>
+      <text x="798" y="145" fill="#101828" font-size="18" font-weight="800" text-anchor="middle">Decisions</text>
+      <text x="798" y="174" fill="#101828" font-size="13" font-weight="700" text-anchor="middle">choice • work</text>
+      <text x="798" y="193" fill="#101828" font-size="13" font-weight="700" text-anchor="middle">loans • transfer</text>
+    </g>
+
+    <line x1="138" y1="244" x2="798" y2="244" stroke="#d8e1ee" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="138" cy="244" r="4" fill="#101828"/>
+    <circle cx="358" cy="244" r="4" fill="#2f80ed"/>
+    <circle cx="578" cy="244" r="4" fill="#2ec4b6"/>
+    <circle cx="798" cy="244" r="4" fill="#ffca3a"/>
+  </g>
+</svg>

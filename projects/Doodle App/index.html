@@ -1,0 +1,86 @@
+<!-- AI Doodle Studio, Mella Cardinot, April 28th, 2026 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Doodle Studio</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+  <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <header>
+      <p class="course">PROG 102 Doodle App (ML) Assignment</p>
+      <h1>AI Doodle Studio</h1>
+      <p class="subtitle">Draw one simple object. DoodleNet will keep guessing while you sketch.</p>
+    </header>
+
+    <section class="workspace">
+      <section class="drawing-panel" aria-label="Drawing area">
+        <div id="canvas-container"></div>
+      </section>
+
+      <section class="control-panel" aria-label="Controls and AI response">
+        <div class="box">
+          <p id="model-status" class="status">Model loading...</p>
+          <h2 id="top-guess">AI guess: waiting...</h2>
+          <p id="top-confidence">Confidence: --</p>
+          <div id="prediction-list" class="prediction-list">
+            <p class="muted">Predictions will appear here.</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <h2>Drawing Tools</h2>
+
+          <div class="button-row">
+            <button id="pen-button" class="tool active" type="button">Black Pen</button>
+            <button id="marker-button" class="tool" type="button">Marker</button>
+            <button id="eraser-button" class="tool" type="button">Eraser</button>
+          </div>
+
+          <label for="brush-size">Brush size: <span id="brush-size-text">5 px</span></label>
+          <input id="brush-size" type="range" min="2" max="40" value="5" />
+
+          <label for="ink-color">Ink color</label>
+          <select id="ink-color">
+            <option value="#000000">Black</option>
+            <option value="#e63946">Red</option>
+            <option value="#457b9d">Blue</option>
+            <option value="#2a9d8f">Teal</option>
+            <option value="#f4a261">Warm Yellow</option>
+          </select>
+
+          <p id="tool-status" class="tool-status">Mode: pen | Size: 5 px | Color: black</p>
+
+          <div class="button-row">
+            <button id="clear-button" class="clear" type="button">Clear</button>
+            <button id="save-button" type="button">Save</button>
+            <button id="prompt-button" class="prompt" type="button">Practice Prompt</button>
+          </div>
+
+          <p id="prompt-text" class="prompt-text">Prompt: click Practice Prompt for an idea.</p>
+        </div>
+
+        <div class="box">
+          <h2>Sketch Tips</h2>
+          <ul>
+            <li>Draw one object at a time.</li>
+            <li>Use black pen for best AI guesses.</li>
+            <li>Click clear before starting a new drawing.</li>
+            <li>Save a screenshot or use the save button for your submission.</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="sketch.js"></script>
+</body>
+</html>

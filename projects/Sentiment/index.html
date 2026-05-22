@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+  Sentiment (Customized) Assignment
+  Mood Meter: Sentiment Analyzer
+  Mella Cardinot
+  May 11th, 2026
+
+  This project uses p5.js and ml5.js to predict sentiment with the
+  MovieReviews model.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Meter: Sentiment Analyzer</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.10/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <main class="app">
+      <section class="card intro-card">
+        <p class="eyebrow">PROG 102 · Sentiment Customized</p>
+        <h1>Mood Meter: Sentiment Analyzer</h1>
+        <p class="intro-text">
+          Type a short movie-review-style sentence and let ml5.js estimate
+          whether it sounds negative, neutral, or positive.
+        </p>
+        <p id="modelStatus" class="status-message" aria-live="polite">Model loading...</p>
+      </section>
+
+      <section class="card work-card">
+        <div class="input-panel">
+          <label for="sentimentInput">Your text</label>
+          <p class="field-hint">
+            The model works best with movie-review-style sentences. Press Enter
+            to analyze, or Shift + Enter for a new line.
+          </p>
+          <textarea
+            id="sentimentInput"
+            rows="5"
+            placeholder="Today is the happiest day and is full of rainbows!"
+          >Today is the happiest day and is full of rainbows!</textarea>
+
+          <div class="button-row">
+            <button id="analyzeBtn" class="primary-btn" type="button">Analyze</button>
+            <button id="clearBtn" class="secondary-btn" type="button">Clear</button>
+          </div>
+
+          <div class="examples" aria-label="Example text buttons">
+            <button
+              class="example-btn"
+              type="button"
+              data-example="This movie was beautiful, emotional, and completely unforgettable."
+            >
+              Positive Example
+            </button>
+            <button
+              class="example-btn"
+              type="button"
+              data-example="The story was boring, confusing, and painfully slow."
+            >
+              Negative Example
+            </button>
+            <button
+              class="example-btn"
+              type="button"
+              data-example="The movie had actors, music, and several scenes."
+            >
+              Neutral Example
+            </button>
+            <button
+              class="example-btn"
+              type="button"
+              data-example="The visuals were amazing, but the plot felt rushed and uneven."
+            >
+              Mixed Example
+            </button>
+          </div>
+        </div>
+
+        <div class="result-panel" aria-live="polite">
+          <h2>Result</h2>
+          <p id="categoryLabel" class="category-label">No result yet.</p>
+          <p id="scoreLabel" class="score-label">Score: --</p>
+          <p id="rawScoreLabel" class="raw-score">Raw confidence: --</p>
+
+          <div id="emojiDisplay" class="emoji" aria-label="Mood emoji">🌫️</div>
+          <div id="starsDisplay" class="stars" aria-label="Star rating">☆☆☆☆☆</div>
+
+          <div class="meter-labels">
+            <span>Negative</span>
+            <span>Positive</span>
+          </div>
+          <div class="meter" aria-label="Sentiment meter">
+            <div id="meterFill"></div>
+          </div>
+          <p id="meterText" class="meter-text">Meter: 0%</p>
+        </div>
+      </section>
+
+      <section class="card history-card">
+        <div class="section-heading">
+          <h2>Prediction History</h2>
+          <button id="clearHistoryBtn" class="secondary-btn small-btn" type="button">
+            Clear History
+          </button>
+        </div>
+        <ul id="historyList" class="history-list">
+          <li class="empty-history">No predictions yet.</li>
+        </ul>
+      </section>
+
+      <section class="card info-card">
+        <h2>How to Read This</h2>
+        <ul>
+          <li>This model was trained on movie reviews.</li>
+          <li>It predicts patterns in text rather than understanding feelings like a person.</li>
+          <li>Short or vague sentences may produce weird results.</li>
+          <li>Try comparing positive, negative, neutral, and mixed sentences.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>

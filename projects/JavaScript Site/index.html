@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+JavaScript Site
+Creative Coding for Game Art Students
+Name: Mella Cardinot
+Date: May 20th, 2026
+Credits: Created for PROG 102 using plain HTML, CSS, and JavaScript class templates.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Coding for Game Art Students</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="brand" href="#home" aria-label="Creative Coding home">
+        <span class="brand-mark" aria-hidden="true">CC</span>
+        <span>
+          <span class="brand-title">Creative Coding</span>
+          <span class="brand-subtitle">Game Art Study Site</span>
+        </span>
+      </a>
+
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+        Light Mode
+      </button>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <button class="active" type="button" data-page="home">Home</button>
+      <button type="button" data-page="about">About</button>
+      <button type="button" data-page="gallery">Gallery</button>
+      <button type="button" data-page="resources">Resources</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">PROG 102 JavaScript Site</p>
+          <h1>Creative Coding for Game Art Students</h1>
+          <p class="intro">
+            A small study portfolio about using code as a sketchbook for game art,
+            animation, UI ideas, and interactive experiments.
+          </p>
+
+          <div class="prompt-card">
+            <h2>Creative Prompt Generator</h2>
+            <p id="prompt-output">
+              Ready for a quick art-and-code challenge.
+            </p>
+            <button id="prompt-button" class="accent-button" type="button">
+              Random Creative Prompt
+            </button>
+          </div>
+        </div>
+
+        <div class="visual-board" aria-label="Decorative game art study board">
+          <div class="pixel-grid" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="sprite-card">
+            <span class="sprite-eye"></span>
+            <span class="sprite-eye"></span>
+            <span class="sprite-mouth"></span>
+          </div>
+          <div class="code-strip">
+            <span>if (idea) { draw(); }</span>
+            <span>frame += 1;</span>
+            <span>player.color = teal;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="page">
+      <div class="section-heading">
+        <p class="eyebrow">What It Means</p>
+        <h1>Code can be an art material.</h1>
+      </div>
+
+      <div class="info-grid">
+        <article class="soft-card">
+          <h2>Creative Coding</h2>
+          <p>
+            Creative coding means writing programs to make visual, playful, or
+            interactive work. Instead of only solving business problems, the code
+            becomes part of the artwork.
+          </p>
+        </article>
+
+        <article class="soft-card">
+          <h2>Game Art Connection</h2>
+          <p>
+            Game artists can use JavaScript to test color palettes, build animated
+            mockups, design menus, create particle effects, or prototype character
+            interactions before moving into a larger game engine.
+          </p>
+        </article>
+
+        <article class="soft-card">
+          <h2>Beginner Mindset</h2>
+          <p>
+            Each small experiment teaches a skill: selecting elements, responding
+            to clicks, changing classes, storing choices, and making the browser
+            react to the player or viewer.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="page">
+      <div class="section-heading">
+        <p class="eyebrow">Study Gallery</p>
+        <h1>Mini projects for an art-and-code sketchbook.</h1>
+      </div>
+
+      <div class="filter-controls" aria-label="Gallery filters">
+        <button class="active" type="button" data-filter="all">All</button>
+        <button type="button" data-filter="code">Code</button>
+        <button type="button" data-filter="art">Art</button>
+        <button type="button" data-filter="game">Game</button>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card" data-category="code">
+          <div class="card-art code-art" aria-hidden="true"></div>
+          <span class="tag">Code</span>
+          <h2>Color Mood Switcher</h2>
+          <p>A JavaScript practice piece that changes a scene palette with button clicks.</p>
+        </article>
+
+        <article class="gallery-card" data-category="code">
+          <div class="card-art code-art second" aria-hidden="true"></div>
+          <span class="tag">Code</span>
+          <h2>Animated Interface Test</h2>
+          <p>A tiny UI prototype that uses classes to show menus, panels, and hover states.</p>
+        </article>
+
+        <article class="gallery-card" data-category="art">
+          <div class="card-art art-art" aria-hidden="true"></div>
+          <span class="tag">Art</span>
+          <h2>Procedural Texture Sheet</h2>
+          <p>A set of generated texture ideas for stones, portals, and magic effects.</p>
+        </article>
+
+        <article class="gallery-card" data-category="art">
+          <div class="card-art art-art second" aria-hidden="true"></div>
+          <span class="tag">Art</span>
+          <h2>Character Shape Study</h2>
+          <p>A visual study exploring silhouette, color, and personality through simple shapes.</p>
+        </article>
+
+        <article class="gallery-card" data-category="game">
+          <div class="card-art game-art" aria-hidden="true"></div>
+          <span class="tag">Game</span>
+          <h2>Magical Inventory Screen</h2>
+          <p>A mock game menu that organizes items with clear cards, icons, and readable labels.</p>
+        </article>
+
+        <article class="gallery-card" data-category="game">
+          <div class="card-art game-art second" aria-hidden="true"></div>
+          <span class="tag">Game</span>
+          <h2>Bouncing Object Prototype</h2>
+          <p>A simple animation plan for giving an object weight, timing, and personality.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="resources" class="page">
+      <div class="section-heading">
+        <p class="eyebrow">Keep Learning</p>
+        <h1>Beginner resources for building confidence.</h1>
+      </div>
+
+      <div class="resource-list">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+          <span>MDN JavaScript</span>
+          <small>Clear reference pages for JavaScript basics, browser tools, and examples.</small>
+        </a>
+        <a href="https://p5js.org/" target="_blank" rel="noreferrer">
+          <span>p5.js</span>
+          <small>A friendly creative coding library for drawing, animation, and interaction.</small>
+        </a>
+        <a href="https://processing.org/" target="_blank" rel="noreferrer">
+          <span>Processing</span>
+          <small>A classic creative coding environment used by artists and designers.</small>
+        </a>
+        <a href="https://thecodingtrain.com/" target="_blank" rel="noreferrer">
+          <span>The Coding Train</span>
+          <small>Beginner-friendly video lessons about visual coding and playful experiments.</small>
+        </a>
+        <a href="https://pages.github.com/" target="_blank" rel="noreferrer">
+          <span>GitHub Pages</span>
+          <small>A free way to publish small HTML, CSS, and JavaScript projects online.</small>
+        </a>
+      </div>
+
+      <p class="resource-note">
+        These resources help students practice the basics, learn by remixing examples,
+        and build a portfolio of interactive studies over time.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

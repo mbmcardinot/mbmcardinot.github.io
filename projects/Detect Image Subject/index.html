@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Image Insight: Subject Detector</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.14.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <p class="eyebrow">PROG 102 Creative AI Tool</p>
+    <h1>Image Insight: Subject Detector</h1>
+    <p class="subtitle">
+      Upload a clear image and let MobileNet estimate the subject with confidence scores.
+    </p>
+  </header>
+
+  <main class="page-wrap">
+    <section class="app-card" aria-labelledby="toolTitle">
+      <div class="tool-header">
+        <div>
+          <h2 id="toolTitle">Image Classifier</h2>
+          <p>Choose or drop one image. The model will return its top five guesses.</p>
+        </div>
+        <span class="status-pill">TensorFlow.js + MobileNet</span>
+      </div>
+
+      <div class="workspace-grid">
+        <section class="upload-panel" aria-label="Image upload area">
+          <div
+            id="dropzone"
+            class="dropzone"
+            role="button"
+            tabindex="0"
+            aria-label="Drop image here or click to browse"
+          >
+            <div class="dropzone-icon" aria-hidden="true">AI</div>
+            <strong>Drop image here or click to browse</strong>
+            <span>Use a JPG, PNG, GIF, or WebP image file.</span>
+          </div>
+
+          <input type="file" id="imageInput" accept="image/*">
+
+          <p class="example-note">
+            Example image idea: try a bright, centered photo of a game prop, plant,
+            vehicle, snack, character reference, or everyday object.
+          </p>
+
+          <div class="control-row" aria-label="Image controls">
+            <button type="button" id="analyzeButton" class="primary-button">Analyze image</button>
+            <button type="button" id="resetButton" class="secondary-button">Reset image</button>
+          </div>
+
+          <div class="model-status" aria-live="polite">
+            <p id="result" class="status-text">Loading model...</p>
+            <div id="progressContainer" class="progress-container" aria-label="Model loading progress">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="previewCard" class="preview-card is-hidden" aria-label="Image preview">
+          <div class="section-heading">
+            <h2>Preview</h2>
+            <p id="fileName" class="file-name"></p>
+          </div>
+          <div class="preview-frame">
+            <img id="preview" alt="Selected image preview">
+          </div>
+        </section>
+      </div>
+
+      <section class="results-panel" aria-labelledby="resultsTitle">
+        <div class="section-heading">
+          <div>
+            <h2 id="resultsTitle">Prediction Results</h2>
+            <p id="predictionHint">Top five predictions will appear after analysis.</p>
+          </div>
+        </div>
+
+        <p id="emptyState" class="empty-state">
+          Results will appear here after you upload an image.
+        </p>
+        <ol id="predictionsList" class="predictions-list" aria-live="polite"></ol>
+      </section>
+    </section>
+
+    <section class="explanation-card" aria-labelledby="explanationTitle">
+      <div>
+        <p class="eyebrow">What is happening?</p>
+        <h2 id="explanationTitle">How MobileNet Reads an Image</h2>
+      </div>
+
+      <div class="explanation-grid">
+        <article>
+          <h3>Pre-trained model</h3>
+          <p>
+            MobileNet is a pre-trained image classification model. TensorFlow.js lets
+            it run directly in the browser, so the image can be analyzed on the page.
+          </p>
+        </article>
+
+        <article>
+          <h3>Pattern matching</h3>
+          <p>
+            The model predicts labels based on visual patterns it learned from
+            training data. It returns probabilities, which this app displays as
+            confidence percentages and bars.
+          </p>
+        </article>
+
+        <article class="limitations-note">
+          <h3>Limitations</h3>
+          <p>
+            MobileNet does not truly understand images like a human. Results can be
+            wrong if the image is blurry, cropped, unusual, stylized, or outside the
+            model's training categories.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Built for the Detect Image Subject Assignment using plain HTML, CSS, JavaScript,
+    TensorFlow.js, and MobileNet.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

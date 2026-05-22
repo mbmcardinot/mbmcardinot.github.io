@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--
+Mella Cardinot
+May 19th, 2026
+Project: Interactive Work (Global, Political, or Societal Relevance)
+Title: The Price of a Future: An Interactive Guide to Affordable Education
+Topic: Affordable education
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An interactive student project about college affordability, tuition growth, and student debt." />
+  <title>The Price of a Future</title>
+
+  <!-- Chart.js for the interactive tuition chart. -->
+  <script src="chart.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="#hero" aria-label="The Price of a Future home">
+        <span class="brand-mark" aria-hidden="true">$</span>
+        <span>The Price of a Future</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#tuition">Tuition Explorer</a>
+        <a href="#calculator">Debt Calculator</a>
+        <a href="#stories">Stories</a>
+        <a href="#action">Take Action</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="section hero" aria-labelledby="hero-title">
+      <div class="hero-shape shape-one" aria-hidden="true"></div>
+      <div class="hero-shape shape-two" aria-hidden="true"></div>
+      <div class="floating-card float-one" aria-hidden="true">$</div>
+      <div class="floating-card float-two" aria-hidden="true">Aid</div>
+      <div class="floating-card float-three" aria-hidden="true">Net price</div>
+
+      <div class="section-shell hero-content">
+        <p class="eyebrow">Affordable Education</p>
+        <h1 id="hero-title">The Price of a Future</h1>
+        <p class="hero-subtitle">College is often described as a doorway to opportunity, but for many students, that doorway comes with a price tag that feels impossible before they even step through it.</p>
+        <p class="hero-copy">Explore how tuition, living expenses, aid, and debt can shape college choices, then use the tools below to compare costs more clearly.</p>
+        <a class="primary-button" href="#tuition">Explore Costs</a>
+      </div>
+    </section>
+
+    <section id="problem" class="section section-light" aria-labelledby="problem-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="eyebrow">The Problem</p>
+          <h2 id="problem-title">College affordability is a personal decision and a public issue.</h2>
+          <p>Higher education can open doors, but rising costs can pressure students to borrow more, work longer hours, delay enrollment, or choose a school based mainly on price. The exact cost depends on the school, state residency, housing, family income, and aid package, so this project focuses on understanding patterns instead of pretending one number explains everyone.</p>
+        </div>
+
+        <div class="stat-grid" aria-label="College affordability issue cards">
+          <article class="stat-card stat-blue">
+            <p class="stat-label">Rising tuition</p>
+            <h3>Prices have grown across decades.</h3>
+            <p>NCES data shows that published college costs have changed substantially over time. The explorer below uses simplified demo values to make that trend interactive.</p>
+          </article>
+
+          <article class="stat-card stat-coral">
+            <p class="stat-label">Student debt burden</p>
+            <h3>Debt can follow students after graduation.</h3>
+            <p>Loans can make college possible, but repayment can affect housing, career choices, family finances, and the risks students feel comfortable taking.</p>
+          </article>
+
+          <article class="stat-card stat-teal">
+            <p class="stat-label">Unequal access</p>
+            <h3>Price can shape who gets options.</h3>
+            <p>Students with less family financial support often need clearer price information, stronger aid, and practical pathways such as transfer programs.</p>
+          </article>
+        </div>
+
+        <figure class="flow-visual">
+          <img src="assets/affordability-flow.svg" alt="A flow showing sticker price minus aid leading to net price and college decisions." />
+          <figcaption>Affordability is not only about sticker price. Students need to compare the net price after grants, scholarships, and realistic living costs.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="tuition" class="section" aria-labelledby="tuition-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Tuition Explorer</p>
+          <h2 id="tuition-title">Move the slider to test how growth changes future costs.</h2>
+          <p>The chart compares approximate public and private tuition demo data for selected years. The 2030 and 2035 values are projections based only on the annual growth rate you choose.</p>
+        </div>
+
+        <div class="tool-panel chart-panel">
+          <div class="slider-row">
+            <label for="growthRate">Projected annual tuition growth rate</label>
+            <output id="growthLabel" for="growthRate">5%</output>
+          </div>
+          <input id="growthRate" class="range-input" type="range" min="0" max="10" step="0.5" value="5" />
+
+          <div class="chart-wrap">
+            <canvas id="tuitionChart" aria-label="Line chart comparing public and private tuition demo data with projections" role="img"></canvas>
+            <p id="chartFallback" class="fallback-message" hidden>Chart.js did not load. The projection values below still update from the same data.</p>
+          </div>
+
+          <div class="projection-summary" aria-live="polite">
+            <div>
+              <span>Projected public tuition in 2035</span>
+              <strong id="public2035">$0</strong>
+            </div>
+            <div>
+              <span>Projected private tuition in 2035</span>
+              <strong id="private2035">$0</strong>
+            </div>
+          </div>
+
+          <p class="note">Projection note: this is a simplified demonstration. It does not predict actual school prices, financial aid, inflation, or policy changes. Replace the sample values with exact source data if your instructor requires current verified numbers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section section-cream" aria-labelledby="calculator-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Debt Calculator</p>
+          <h2 id="calculator-title">Estimate the total cost before loans enter the story.</h2>
+          <p>Change the numbers to test different college paths. The total is simplified, but it helps show why aid, living expenses, and years enrolled all matter.</p>
+        </div>
+
+        <div class="calculator-layout">
+          <form class="calculator-form" aria-label="Estimated college cost calculator">
+            <label class="input-group" for="tuitionInput">
+              <span>Annual tuition</span>
+              <input id="tuitionInput" type="number" min="0" step="100" value="11100" inputmode="decimal" />
+            </label>
+
+            <label class="input-group" for="yearsInput">
+              <span>Years enrolled</span>
+              <input id="yearsInput" type="number" min="1" step="1" value="4" inputmode="numeric" />
+            </label>
+
+            <label class="input-group" for="aidInput">
+              <span>Scholarship or grant aid per year</span>
+              <input id="aidInput" type="number" min="0" step="100" value="3000" inputmode="decimal" />
+            </label>
+
+            <label class="input-group" for="livingInput">
+              <span>Annual living expenses</span>
+              <input id="livingInput" type="number" min="0" step="100" value="15000" inputmode="decimal" />
+            </label>
+
+            <p id="validationNote" class="validation-note" aria-live="polite"></p>
+          </form>
+
+          <aside class="result-card" aria-live="polite">
+            <p class="stat-label">Estimated total cost</p>
+            <strong id="costResult">$0</strong>
+            <p id="costMessage">Change the calculator values to see an interpretation.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="stories" class="section" aria-labelledby="stories-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Student Stories</p>
+          <h2 id="stories-title">Affordability changes real decisions.</h2>
+          <p>These fictional personas are based on common college-planning pressures. Expand each story to see the concern and a possible support path.</p>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-card">
+            <div class="story-topline">
+              <p class="story-name">Maria</p>
+              <p class="story-role">First-generation student</p>
+            </div>
+            <p>Maria wants to attend a four-year college, but her family has never filled out financial aid forms before. Every deadline feels high stakes.</p>
+            <dl>
+              <dt>Biggest concern</dt>
+              <dd>Understanding the real cost after aid, books, housing, and transportation.</dd>
+              <dt>Possible support</dt>
+              <dd>FAFSA help nights, a school counselor, and comparing net price calculators.</dd>
+            </dl>
+            <button class="story-toggle" type="button" aria-expanded="false" aria-controls="maria-details">Show details</button>
+            <div id="maria-details" class="story-more" hidden>
+              <p>Maria's best next step is to make a short list of schools, compare estimated net prices, and ask each financial aid office what grants or emergency funds might be available.</p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-topline">
+              <p class="story-name">Jamal</p>
+              <p class="story-role">Community college transfer student</p>
+            </div>
+            <p>Jamal starts at community college to lower costs while working part time. He wants his credits to transfer cleanly into a bachelor's program.</p>
+            <dl>
+              <dt>Biggest concern</dt>
+              <dd>Balancing work hours with classes and avoiding lost credits after transfer.</dd>
+              <dt>Possible support</dt>
+              <dd>Transfer agreements, advising appointments, and planning courses early.</dd>
+            </dl>
+            <button class="story-toggle" type="button" aria-expanded="false" aria-controls="jamal-details">Show details</button>
+            <div id="jamal-details" class="story-more" hidden>
+              <p>Jamal can reduce risk by confirming degree maps with both schools, checking scholarship deadlines for transfer students, and keeping a realistic weekly schedule.</p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-topline">
+              <p class="story-name">Ava</p>
+              <p class="story-role">Choosing between offers</p>
+            </div>
+            <p>Ava is accepted into her dream school, but another college offers a stronger aid package. She has to decide what value means beyond prestige.</p>
+            <dl>
+              <dt>Biggest concern</dt>
+              <dd>Whether the dream school is worth a much higher estimated debt load.</dd>
+              <dt>Possible support</dt>
+              <dd>Comparing graduation rates, program fit, aid appeals, and monthly repayment estimates.</dd>
+            </dl>
+            <button class="story-toggle" type="button" aria-expanded="false" aria-controls="ava-details">Show details</button>
+            <div id="ava-details" class="story-more" hidden>
+              <p>Ava can ask both colleges for a clearer aid explanation, compare four-year totals, and talk with trusted adults before choosing the option that protects her future flexibility.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="action" class="section section-light" aria-labelledby="action-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Take Action</p>
+          <h2 id="action-title">Practical steps can turn a scary price tag into a plan.</h2>
+          <p>Students should not have to solve college affordability alone, but these actions can make the process clearer and help families ask stronger questions.</p>
+        </div>
+
+        <div class="action-grid">
+          <article class="action-card">
+            <h3>Compare net price, not sticker price.</h3>
+            <p>Use each school's net price calculator to estimate the cost after grants and scholarships.</p>
+          </article>
+
+          <article class="action-card">
+            <h3>Apply for FAFSA and financial aid.</h3>
+            <p>Federal aid can include grants, work-study, and loans. Applying keeps more options open.</p>
+          </article>
+
+          <article class="action-card">
+            <h3>Search scholarships early.</h3>
+            <p>Small scholarships can add up, especially when students track deadlines before senior spring.</p>
+          </article>
+
+          <article class="action-card">
+            <h3>Ask colleges about grants.</h3>
+            <p>Financial aid offices can explain institutional grants, appeals, payment plans, and emergency funds.</p>
+          </article>
+
+          <article class="action-card">
+            <h3>Contact representatives about funding.</h3>
+            <p>Public college affordability is connected to policy choices, state budgets, and public investment.</p>
+          </article>
+
+          <article class="action-card">
+            <h3>Share resources with classmates or family.</h3>
+            <p>Many students miss support because they do not know what to ask. Sharing clear tools helps.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources" class="section sources-section" aria-labelledby="sources-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Sources / Credits</p>
+          <h2 id="sources-title">Research sources and AI documentation</h2>
+          <p>This project uses research sources for context and simplified sample data for interaction. Exact current data should be checked before final presentation.</p>
+        </div>
+
+        <div class="sources-grid">
+          <article>
+            <h3>Research Sources</h3>
+            <ul class="source-list">
+              <li><a href="https://nces.ed.gov/programs/digest/d23/tables/dt23_330.10.asp" target="_blank" rel="noreferrer">National Center for Education Statistics (NCES): tuition, fees, room, and board data</a></li>
+              <li><a href="https://studentaid.gov/" target="_blank" rel="noreferrer">Federal Student Aid: FAFSA, grants, loans, and repayment information</a></li>
+              <li><a href="https://www.pewresearch.org/topic/economy-work/personal-finances/student-loans-1/" target="_blank" rel="noreferrer">Pew Research Center: student loan and household finance context</a></li>
+            </ul>
+          </article>
+
+          <article class="ai-credit">
+            <h3>AI Documentation Placeholder</h3>
+            <p><strong>AI Tool Used:</strong> ChatGPT</p>
+            <p><strong>Prompt:</strong> Analyzing these plain HTML, CSS, and JavaScript interactive website files about affordable education, prompt me with more interactive ideas brainstorming to improve the site's usability.</p>
+            <p><strong>Summary of AI Output:</strong> Drafted different simulations for future college applicants based on family socioeconomic status and/or background, and what attitudes can be adhered to approach their opportunities in the best way.</p>
+            <p><strong>How I edited it:</strong> Reviewed the wording, replaced some of the demo data, and personalized the final submission details.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>The Price of a Future: a student created interactive explainer about affordable education.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
