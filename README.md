@@ -3,15 +3,15 @@
 Student: Mella Cardinot
 Live site: https://mbmcardinot.github.io/
 
-This portfolio presents five programming projects created for PROG 102. It is designed as a browsable GitHub Pages site, not just a raw code repository, so each project can be viewed as part of a polished programming portfolio.
+This portfolio presents five programming projects created for PROG 102 for the Spring Semester of 2026. It is designed as a browsable GitHub Pages site, so each project can be viewed as part of a polished programming portfolio.
 
 ## Included Portfolio Pieces
 
-1. The Price of a Future — Final Interactive Work project about affordable education.
-2. Creative Coding for Game Art Students — JavaScript Site project using navigable sections and DOM interaction.
-3. World Weather Dashboard — Weather Data Visualization project using a card-based data dashboard.
-4. AI Doodle Classifier — Doodle App project using p5.js and ml5.js DoodleNet concepts.
-5. Movie Review Sentiment Analyzer — Sentiment Customized project using ml5.js sentiment-analysis concepts.
+1. The Price of a Future - Final Interactive Work project about affordable education.
+2. Creative Coding for Game Art Students - JavaScript Site project using navigable sections and DOM interaction.
+3. World Weather Dashboard - Weather Data Visualization project using a card-based data dashboard.
+4. AI Doodle Classifier - Doodle App project using p5.js and ml5.js DoodleNet concepts.
+5. Movie Review Sentiment Analyzer - Sentiment Customized project using ml5.js sentiment-analysis concepts.
 
 ## What Each Project Includes
 
