@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PROG 102 programming portfolio for Mella Cardinot featuring JavaScript, creative coding, machine learning, data visualization, and social impact design." />
+  <meta name="description" content="PROG 102 programming portfolio for Mella Cardinot." />
   <title>PROG 102 Code Course Portfolio | Mella Cardinot</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -24,7 +24,7 @@
     <section class="hero-content">
       <p class="eyebrow">PROG 102 Code Course Portfolio</p>
       <h1>Mella Cardinot</h1>
-      <p class="hero-copy">A browsable portfolio of five programming pieces for PROG-102 exploring JavaScript, creative coding, machine learning, data visualization, and socially relevant interactive design.</p>
+      <p class="hero-copy">Five browsable programming pieces exploring JavaScript, creative coding, machine learning, data visualization, and socially relevant interactive design.</p>
       <div class="hero-actions">
         <a class="button primary" href="#projects">View Projects</a>
         <a class="button secondary" href="#process">See Process</a>
@@ -35,9 +35,9 @@
   <main id="main">
     <section id="projects" class="section">
       <div class="section-heading">
-        <p class="eyebrow">PROG-102 Code Spring 2026</p>
-        <h2>Mella Portfolio</h2>
-        <p>Code Projects</p>
+        <p class="eyebrow">Selected Course Work</p>
+        <h2>Five Portfolio Pieces</h2>
+        <p>The portfolio includes the final semester project plus four additional course assignments. Each card includes a screenshot, brief description, challenge, solution, and link to the runnable project.</p>
       </div>
 
       <div class="filter-bar" aria-label="Filter projects">
@@ -45,153 +45,104 @@
         <button class="filter-button" type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
         <button class="filter-button" type="button" data-filter="machine-learning" aria-pressed="false">Machine Learning</button>
         <button class="filter-button" type="button" data-filter="social-impact" aria-pressed="false">Social Impact</button>
-        <button class="filter-button" type="button" data-filter="data" aria-pressed="false">Data</button>
       </div>
 
       <div class="project-grid">
-        <article id="project-final" class="project-card" data-category="social-impact javascript data">
-          <div class="preview preview-final" role="img" aria-label="Screenshot preview of The Price of a Future project">
-            <span class="browser-bar"><i></i><i></i><i></i></span>
-            <strong>The Price of a Future</strong>
-            <small>Tuition chart • Debt calculator • Student stories</small>
-          </div>
+        <article class="project-card featured" data-category="social-impact javascript">
+          <a class="screenshot-link" href="projects/final-interactive-work/"><img src="assets/screenshots/final-hero.svg" alt="Screenshot of The Price of a Future project hero section" /></a>
           <div class="project-body">
             <p class="assignment">Project: Interactive Work</p>
             <h3>The Price of a Future</h3>
-            <p>This final interactive project explores affordable education through tuition projections, a debt calculator, student stories, and action steps. It combines research, data visualization, and interactive design to help students understand how college costs affect real decisions.</p>
+            <p>An interactive project about affordable education, tuition growth, student debt, and practical actions students can take.</p>
+            <p><a class="button small" href="projects/final-interactive-work/">Open project</a></p>
             <h4>Challenge</h4>
-            <p>The challenge was turning a large societal issue into something understandable, personal, and interactive.</p>
+            <p>Turn a large societal issue into something understandable, personal, and interactive.</p>
             <h4>How I solved it</h4>
-            <p>I used an interactive chart, calculator, and story cards to connect abstract cost data to student experiences. The project balances information with emotion so users can understand the problem and imagine practical next steps.</p>
-            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Chart.js</li><li>Social Impact</li></ul>
-            <button class="details-toggle" type="button">More details</button>
-            <div class="details">
-              <p><strong>Technical details:</strong> Built as a multi-section website with smooth navigation, responsive cards, Chart.js visualization, input validation, and a cost calculator that updates automatically.</p>
-            </div>
+            <p>I used a tuition explorer, debt calculator, student personas, and action cards to connect data with real decisions.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Social Impact</li></ul>
           </div>
         </article>
 
         <article class="project-card" data-category="javascript">
-          <div class="preview preview-js" role="img" aria-label="Screenshot preview of JavaScript Site project">
-            <span class="browser-bar"><i></i><i></i><i></i></span>
-            <strong>Creative Coding Site</strong>
-            <small>Navigation • Theme toggle • Gallery filters</small>
-          </div>
+          <a class="screenshot-link" href="projects/javascript-site/"><img src="assets/screenshots/javascript-site.svg" alt="Screenshot of JavaScript Site project" /></a>
           <div class="project-body">
             <p class="assignment">JavaScript Site</p>
             <h3>Creative Coding for Game Art Students</h3>
-            <p>A multi-section JavaScript website using navigation buttons to switch between content sections without reloading the page. The site connects creative coding concepts to game art and interactive media.</p>
+            <p>A multi-section JavaScript website using navigation buttons, active classes, saved state, and gallery filtering.</p>
+            <p><a class="button small" href="projects/javascript-site/">Open project</a></p>
             <h4>Challenge</h4>
-            <p>The challenge was understanding how JavaScript controls page state and updates what the user sees.</p>
+            <p>Understand how JavaScript controls page state and updates what the user sees.</p>
             <h4>How I solved it</h4>
-            <p>I used navigation buttons with <code>data-page</code> attributes, matching section IDs, and active classes to show and hide content. I added localStorage, a theme toggle, a prompt generator, and gallery filters to deepen the interaction.</p>
+            <p>I used data attributes, matching section IDs, class toggling, localStorage, and interactive gallery filters.</p>
             <ul class="tags"><li>DOM</li><li>Events</li><li>classList</li><li>localStorage</li></ul>
-            <button class="details-toggle" type="button">More details</button>
-            <div class="details"><p><strong>Concepts:</strong> querySelectorAll, event listeners, dataset values, class toggling, responsive CSS, and beginner-friendly state management.</p></div>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="data javascript">
-          <div class="preview preview-weather" role="img" aria-label="Screenshot preview of World Weather Dashboard project">
-            <span class="browser-bar"><i></i><i></i><i></i></span>
-            <strong>Weather Dashboard</strong>
-            <small>City cards • Visual dashboard • JavaScript data</small>
-          </div>
-          <div class="project-body">
-            <p class="assignment">Weather Data Visualization</p>
-            <h3>World Weather Dashboard</h3>
-            <p>This dashboard presents weather information in a simple, visual layout using HTML, CSS, and JavaScript. It organizes city-based weather values into readable cards.</p>
-            <h4>Challenge</h4>
-            <p>The challenge was presenting data in a way that felt visual and readable instead of just listing numbers.</p>
-            <h4>How I solved it</h4>
-            <p>I structured the information into dashboard cards, used visual hierarchy for the most important values, and styled the page so viewers could scan the weather data quickly.</p>
-            <ul class="tags"><li>Data</li><li>Dashboard</li><li>JavaScript</li><li>CSS Grid</li></ul>
-            <button class="details-toggle" type="button">More details</button>
-            <div class="details"><p><strong>Technical details:</strong> Uses card-based layout, JavaScript-driven content, and responsive styling to support a portfolio-ready visualization.</p></div>
           </div>
         </article>
 
         <article class="project-card" data-category="machine-learning javascript">
-          <div class="preview preview-doodle" role="img" aria-label="Screenshot preview of AI Doodle Classifier project">
-            <span class="browser-bar"><i></i><i></i><i></i></span>
-            <strong>AI Doodle Classifier</strong>
-            <small>p5.js canvas • ml5.js • confidence scores</small>
-          </div>
+          <a class="screenshot-link" href="projects/doodle-app/"><img src="assets/screenshots/doodle-app.svg" alt="Screenshot of AI Doodle Classifier" /></a>
           <div class="project-body">
             <p class="assignment">Doodle App (ML)</p>
             <h3>AI Doodle Classifier</h3>
-            <p>A drawing app built with p5.js and ml5.js that uses DoodleNet to guess what the user is drawing. The app includes controls for clearing, saving, and testing doodles.</p>
+            <p>A p5.js drawing app that uses ml5.js DoodleNet ideas to classify user sketches with confidence feedback.</p>
+            <p><a class="button small" href="projects/doodle-app/">Open project</a></p>
             <h4>Challenge</h4>
-            <p>The challenge was connecting a creative drawing interface to a machine learning model in the browser.</p>
+            <p>Connect a creative drawing interface to an AI classification workflow.</p>
             <h4>How I solved it</h4>
-            <p>I created a p5.js canvas, added mouse drawing logic, loaded DoodleNet through ml5.js, and displayed the model’s top predictions with confidence values so users could understand the AI output.</p>
+            <p>I built a canvas, drawing tools, confidence display, model status, and screenshot-ready controls.</p>
             <ul class="tags"><li>p5.js</li><li>ml5.js</li><li>DoodleNet</li><li>Canvas</li></ul>
-            <button class="details-toggle" type="button">More details</button>
-            <div class="details"><p><strong>Technical details:</strong> Uses the classification loop from the starter demo and improves it with clearer visual feedback, brush controls, and screenshot-ready layout.</p></div>
           </div>
         </article>
 
         <article class="project-card" data-category="machine-learning javascript">
-          <div class="preview preview-sentiment" role="img" aria-label="Screenshot preview of Sentiment Analyzer project">
-            <span class="browser-bar"><i></i><i></i><i></i></span>
-            <strong>Sentiment Analyzer</strong>
-            <small>Text input • Stars • Meter • History</small>
+          <a class="screenshot-link" href="projects/detect-image-subject/"><img src="assets/screenshots/detect-image-subject.svg" alt="Screenshot of Image Subject Detector" /></a>
+          <div class="project-body">
+            <p class="assignment">Detect Image Subject</p>
+            <h3>Image Insight: Subject Detector</h3>
+            <p>An image classification app that uses TensorFlow.js and MobileNet to predict the subject of uploaded images.</p>
+            <p><a class="button small" href="projects/detect-image-subject/">Open project</a></p>
+            <h4>Challenge</h4>
+            <p>Load an image from the user, preview it, validate it, and pass it to a machine learning model safely.</p>
+            <h4>How I solved it</h4>
+            <p>I built drag-and-drop upload, preview, model loading feedback, top predictions, and confidence bars.</p>
+            <ul class="tags"><li>TensorFlow.js</li><li>MobileNet</li><li>Upload</li><li>AI</li></ul>
           </div>
+        </article>
+
+        <article class="project-card" data-category="machine-learning javascript">
+          <a class="screenshot-link" href="projects/sentiment-analyzer/"><img src="assets/screenshots/sentiment-analyzer.svg" alt="Screenshot of Sentiment Analyzer" /></a>
           <div class="project-body">
             <p class="assignment">Sentiment (Customized)</p>
             <h3>Movie Review Sentiment Analyzer</h3>
-            <p>A customized sentiment analysis tool that scores text from negative to positive and displays the result through stars, emoji, a meter bar, and recent prediction history.</p>
+            <p>A customized sentiment analysis tool that turns text scores into categories, stars, emoji, a meter, and history.</p>
+            <p><a class="button small" href="projects/sentiment-analyzer/">Open project</a></p>
             <h4>Challenge</h4>
-            <p>The challenge was making a numeric machine learning score understandable through a simple user interface.</p>
+            <p>Make a numeric machine learning score easy for users to understand.</p>
             <h4>How I solved it</h4>
-            <p>I translated the sentiment score into a percentage, category label, stars, emoji, and meter bar. I also added examples and history so users could compare different text inputs.</p>
+            <p>I translated the score into a percentage, label, stars, emoji, meter bar, and comparison examples.</p>
             <ul class="tags"><li>ml5.js</li><li>Sentiment</li><li>DOM Updates</li><li>Conditionals</li></ul>
-            <button class="details-toggle" type="button">More details</button>
-            <div class="details"><p><strong>Model note:</strong> The model is trained on movie reviews, so the project includes a limitations note and presents predictions as approximate pattern-based results.</p></div>
           </div>
         </article>
       </div>
     </section>
 
     <section id="process" class="section split">
-      <div>
-        <p class="eyebrow">Process</p>
-        <h2>How this portfolio came together</h2>
-      </div>
-      <div>
-        <p>I started with HTML, CSS, and basic JavaScript interactions, then moved into DOM selection, event listeners, class toggling, localStorage, p5.js creative coding, ml5.js machine learning, TensorFlow-style image/sentiment concepts, and data visualization for interactive storytelling.</p>
-        <p>Each project card explains the assignment challenge and how I solved it, so the portfolio shows both finished work and the thinking behind the code.</p>
-      </div>
+      <div><p class="eyebrow">Process</p><h2>How the portfolio came together</h2></div>
+      <div><p>I started with HTML, CSS, and basic JavaScript interactions, then moved into DOM selection, event listeners, class toggling, localStorage, p5.js creative coding, ml5.js machine learning, TensorFlow-style image classification, sentiment analysis, and data visualization for interactive storytelling.</p><p>Each project card explains the assignment challenge and how I solved it, so the portfolio shows both finished work and the thinking behind the code.</p></div>
     </section>
 
     <section id="about" class="section split">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2>Mella Cardinot</h2>
-      </div>
-      <div>
-        <p>I am a Game Art student interested in interactive media, animation, creative technology, visual storytelling, and how code can support art and design. This portfolio presents my PROG 102 work for the Spring Semester of 2026 as a browsable site.</p>
-      </div>
+      <div><p class="eyebrow">About</p><h2>Student Artist + Creative Technologist</h2></div>
+      <div><p>I am a Game Art student interested in interactive media, animation, creative technology, visual storytelling, and how code can support art and design. This portfolio presents my PROG 102 work as a browsable site instead of a raw code repository.</p></div>
     </section>
 
     <section id="contact" class="section contact-card">
-      <p class="eyebrow">Links</p>
-      <h2>Contact and Profiles</h2>
-      <ul>
-        <li><a href="https://github.com/mbmcardinot" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/mellacardinot" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://www.artstation.com/mbmcardinot" target="_blank" rel="noopener">ArtStation</a></li>
-        <li><a href="mailto:cardinotmanoela@gmail.com">Email</a></li>
-      </ul>
+      <p class="eyebrow">Links</p><h2>Portfolio Links</h2>
+      <ul><li><a href="https://github.com/mbmcardinot" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://mbmcardinot.github.io/">Live Portfolio</a></li><li><a href="mailto:cardinotmanoela@gmail.com">Email</a></li></ul>
     </section>
   </main>
 
   <button id="backToTop" aria-label="Back to top">↑</button>
-
-  <footer>
-    <p>Built for PROG 102 · Hosted with GitHub Pages · 2026</p>
-  </footer>
-
+  <footer><p>Built for PROG 102 · Hosted with GitHub Pages · 2026</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
